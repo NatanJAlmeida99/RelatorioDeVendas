@@ -19,7 +19,8 @@ const buscarPedidosAPI = (simularErro) => {
 
 const gerarRelatorioVendas = async (simularErro) => {
     try {
-        
+        const respostaJSON = await buscarPedidosAPI(simularErro);
+        const pedidos = JSON.parse(respostaJSON)
     } catch (error) {
         
     }
