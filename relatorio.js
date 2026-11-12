@@ -22,7 +22,8 @@ const gerarRelatorioVendas = async (simularErro) => {
     const pedidos = JSON.parse(respostaJSON);
 
     const pedidosPagos = pedidos.filter((e) => e.pago);
-    console.log(pedidosPagos);
+    const clientesPagantes = pedidosPagos.map((e) => e.cliente);
+    console.log(clientesPagantes);
   } catch (error) {}
 };
 
