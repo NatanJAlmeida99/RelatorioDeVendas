@@ -15,3 +15,12 @@ const buscarPedidosAPI = (simularErro) => {
     }, 1000);
   });
 };
+
+
+const gerarRelatorioVendas = async (simularErro) => {
+    try {
+        
+    } catch (error) {
+        
+    }
+}
