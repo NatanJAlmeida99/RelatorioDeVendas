@@ -23,7 +23,8 @@ const gerarRelatorioVendas = async (simularErro) => {
 
     const pedidosPagos = pedidos.filter((e) => e.pago);
     const clientesPagantes = pedidosPagos.map((e) => e.cliente);
-    console.log(clientesPagantes);
+    const faturamentoTotal = pedidosPagos.reduce((acc, atual) => acc + atual.valor, 0)
+    console.log(faturamentoTotal);
   } catch (error) {}
 };
 
