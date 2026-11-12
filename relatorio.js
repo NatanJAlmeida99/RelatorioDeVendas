@@ -23,8 +23,18 @@ const gerarRelatorioVendas = async (simularErro) => {
 
     const pedidosPagos = pedidos.filter((e) => e.pago);
     const clientesPagantes = pedidosPagos.map((e) => e.cliente);
-    const faturamentoTotal = pedidosPagos.reduce((acc, atual) => acc + atual.valor, 0)
+    const faturamentoTotal = pedidosPagos.reduce(
+      (acc, atual) => acc + atual.valor,
+      0,
+    );
     console.log(faturamentoTotal);
+
+    const relatorio = {
+      quantidadeVendas: pedidosPagos.length,
+      faturamentoTotal,
+      clientes: clientesPagantes,
+    };
+    console.log(JSON.stringify(relatorio));
   } catch (error) {}
 };
 
