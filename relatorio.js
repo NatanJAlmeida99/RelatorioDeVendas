@@ -35,7 +35,10 @@ const gerarRelatorioVendas = async (simularErro) => {
       clientes: clientesPagantes,
     };
     console.log(JSON.stringify(relatorio));
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 gerarRelatorioVendas(false);
+gerarRelatorioVendas(true);
