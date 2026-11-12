@@ -16,12 +16,14 @@ const buscarPedidosAPI = (simularErro) => {
   });
 };
 
-
 const gerarRelatorioVendas = async (simularErro) => {
-    try {
-        const respostaJSON = await buscarPedidosAPI(simularErro);
-        const pedidos = JSON.parse(respostaJSON)
-    } catch (error) {
-        
-    }
-}
+  try {
+    const respostaJSON = await buscarPedidosAPI(simularErro);
+    const pedidos = JSON.parse(respostaJSON);
+
+    const pedidosPagos = pedidos.filter((e) => e.pago);
+    console.log(pedidosPagos);
+  } catch (error) {}
+};
+
+gerarRelatorioVendas(false);
